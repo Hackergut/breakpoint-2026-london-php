@@ -1,0 +1,12 @@
+DirectoryIndex index.php
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^register/?$ register.php [L,QSA]
+  RewriteRule ^api/webhooks/forminit/?$ api/webhooks/forminit.php [L,QSA]
+  RewriteRule ^api/webhooks/leads/?$ api/webhooks/leads.php [L,QSA]
+</IfModule>
